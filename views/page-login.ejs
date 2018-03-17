@@ -1,47 +1,130 @@
-<%- include templates/header.ejs %>
+<% var page = "login" %>
+<%- include templates/header-top.ejs %>
+<%- include templates/header-login.ejs %>
     <div class="content-page">
-	
 		<!-- Start content -->
-        <div class="content">
-            
+        <div class="content">         
 			<div class="container-fluid">
-
-					
-					<div class="row">
-						<div class="col-xl-12">
-							<div class="breadcrumb-holder">
-								<h1 class="main-title float-left">Login / Register</h1>
-								<ol class="breadcrumb float-right">
-									<li class="breadcrumb-item">Home</li>
-									<li class="breadcrumb-item active">Login / Register</li>
-								</ol>
-								<div class="clearfix"></div>
-							</div>
+				<!-- Individual Page Header -->
+				<div class="row">
+					<div class="col-xl-12">
+						<div class="breadcrumb-holder">
+							<h1 class="main-title float-left" style="margin-bottom: 10px;">Login</h1>
+							<div class="clearfix"></div>
 						</div>
 					</div>
-					<!-- end row -->
-
-
-					<div class="alert alert-success" role="alert">
-						  <h4 class="alert-heading">Registration / Login / Users Management</h4>
-						  <p>We build a complete framework to manage your users: user registration (you can enable / disable in admin area), email verification, forgot password, reset password, user login.</p>
-						  <p>In admin area you can manage users (add / edit user details) or add new user.</p>
-						  <p>Check all features in Pike Admin PRO here: <a target="_blank" href="https://www.pikeadmin.com/pike-admin-pro"><b>Pike Admin Pro Features</b></a></p>
-					</div>			
-
-
+				</div>
+				<!-- end row -->		
+				<!-- Horizontal Form -->
+				<div class="row" style="margin: 0 20%;">
+					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-12">						
+						<div class="card mb-3">
+							<div class="card-header">
+								<h3 style="text-align:center;">Login to Travel Planner</h3>
+							</div>					
+							<div class="card-body">			
+								<form autocomplete="off" action="#">
+									<!-- Email -->
+									<div class="form-group row">
+										<label for="email" class="col-sm-2 col-form-label">Email</label>
+										<div class="col-sm-10">
+											<input type="email" class="form-control" id="email" placeholder="Email" autocomplete="off">
+										</div>
+									</div>		
+									<!-- Password -->
+									<div class="form-group row">
+										<label for="pass" class="col-sm-2 col-form-label">Password</label>
+										<div class="col-sm-10">
+											<input type="password" class="form-control" id="pass" placeholder="Password" autocomplete="off">
+										</div>
+									</div>
+									<!-- Button -->
+									<div class="form-group row" style="margin: 0 10% 0 40%;">
+										<div class="col-sm-10">
+											<button id="login-btn" type="submit" class="btn btn-primary">Sign in</button>
+										</div>
+									</div>
+								</form>
+							</div>							
+						</div><!-- end card-->					
+					</div>
+				</div>
             </div>
 			<!-- END container-fluid -->
-
 		</div>
 		<!-- END content -->
-
     </div>
 	<!-- END content-page -->
 <%- include templates/footer.ejs %>
 
 <!-- BEGIN Java Script for this page -->
+<script type="text/javascript">
+	console.log("Connected - Login Page");
+	$(document).ready(function(){	
+		// Login Button
+		$("#login-btn").on('click', function(){
+			console.log("Clicked Login Button");
+			var email = $("#email").val().trim();
+			var pass = $("#pass").val().trim();
+			console.log("Clicked: ", email);
+			$.ajax({
+				method: "POST",
+				url: "/post-login",
+				data: {
+					email: email,
+					pass: pass
+				},
+				success: function(data){
+					console.log(data);
+					if (data.error === 0){
+						Messenger().success({ message: data.Message });
+						// Set Cookie
+						var d = new Date();
+						d.setTime(d.getTime() + (7 * 24 * 60 * 60 * 1000)); // 7 days
+						document.cookie = "currentUser=" + JSON.stringify(data.data) + "; expires=" + d.toUTCString() + ";path=/";
+						location.pathname = "/"; // Redirect to dashboard
+					} else{
+						Messenger().error({ message: data.Message });
+					}
+				},
+				error: function(){
+					Messenger().error({ message: "Error on login" });
+				}
+			});	
+		});
 
+		// Submit add entry form
+		$("#add-entry-btn").on('click', function(){
+			console.log("Add Entry Button Clicked");
+			
+		});
+
+		// Submit add entry form
+		$("#add-entry-btn").on('click', function(){
+			console.log("Add Entry Button Clicked");
+			
+		});
+
+		// Submit add entry form
+		$("#add-entry-btn").on('click', function(){
+			console.log("Add Entry Button Clicked");
+			
+		});
+
+		// Submit add entry form
+		$("#add-entry-btn").on('click', function(){
+			console.log("Add Entry Button Clicked");
+			
+		});
+
+		// Submit add entry form
+		$("#add-entry-btn").on('click', function(){
+			console.log("Add Entry Button Clicked");
+			
+		});
+
+	});
+</script>
 <!-- END Java Script for this page -->
 
 </body>

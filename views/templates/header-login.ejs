@@ -1,0 +1,85 @@
+        <nav class="navbar-custom">
+            <ul class="list-inline float-right mb-0">   
+                <!-- Info Button -->
+                <li class="list-inline-item dropdown notif">
+                    <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <i class="fa fa-fw fa-question-circle"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-arrow-success dropdown-lg">
+                        <!-- item-->
+                        <!-- <div class="dropdown-item noti-title">
+                            <h5><small>Help and Support</small></h5>
+                        </div> -->
+                        <!-- item-->
+                        <!-- <a target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item">                                    
+                            <p class="notify-details ml-0">
+                                <b>Do you want custom development to integrate this theme?</b>
+                                <span>Contact Us</span>
+                            </p>
+                        </a> -->
+                        <!-- item-->
+                        <!-- <a target="_blank" href="https://www.pikeadmin.com/pike-admin-pro" class="dropdown-item notify-item">                                    
+                            <p class="notify-details ml-0">
+                                <b>Do you want PHP version of the theme that save dozens of hours of work?</b>
+                                <span>Try Pike Admin PRO</span>
+                            </p>
+                        </a>                                -->
+                        <!-- All-->
+                        <!-- <a title="Clcik to visit Pike Admin Website" target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item notify-all">
+                            <i class="fa fa-link"></i> Visit Pike Admin Website
+                        </a> -->
+                    </div>
+                </li>
+            </ul>
+            <!-- Three Line Navbar Toggle -->
+            <ul class="list-inline menu-left mb-0">
+                <li class="float-left">
+                    <button class="button-menu-mobile open-left">
+                        <i class="fa fa-fw fa-bars"></i>
+                    </button>
+                </li>                        
+            </ul>
+        </nav>
+	</div>
+	<!-- End Navigation -->
+	
+	<!-- Left Sidebar -->
+	<div class="left main-sidebar">
+		<div class="sidebar-inner leftscroll">
+			<div id="sidebar-menu"> 
+			    <ul>
+                    <!-- Login -->
+					<li class="submenu">
+                        <% if (page === "login"){ %>
+                            <a class="active" href="page-login.ejs"><i class="fa fa-fw home"></i><span>Login</span> </a>
+                        <% } else { %>
+                            <a href="page-login.ejs"><i class="fa fa-fw home"></i><span>Login</span> </a>
+                        <% } %>
+                    </li>
+                    <!-- Signup -->
+					<li class="submenu">
+                        <% if (page === "signup"){ %>
+                            <a class="active" href="page-signup.ejs"><i class="fa fa-fw user-o"></i><span>Signup</span> </a>
+                        <% } else { %>
+                            <a href="page-signup.ejs"><i class="fa fa-fw user-o"></i><span>Signup</span> </a>
+                        <% } %>
+                    </li>	
+                    <!-- Other Pages -->
+					<li class="submenu">
+                        <% if (page === "how-to" || page === "request-feature"){ %>
+                            <a class="active" href="#"><i class="fa fa-fw info-circle"></i> <span>More Info</span> <span class="menu-arrow"></span></a>
+                        <% } else { %>
+                            <a href="#"><i class="fa fa-fw fa-table"></i> <span>More Info</span> <span class="menu-arrow"></span></a>
+                        <% } %>
+                        <ul class="list-unstyled">
+                            <li><a href="page-how-to.ejs"><i class="fa fa-fw map-o"></i> <span>How to Use</span></a></li>
+                            <li><a href="page-request-feature.ejs"><i class="fa fa-fw paper-plane-o"></i> <span>Request a Feature</span></a></li>
+                        </ul>
+                    </li>							
+                </ul>
+                <div class="clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<!-- End Sidebar -->

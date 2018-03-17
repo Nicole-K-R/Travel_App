@@ -4,7 +4,7 @@ var main = require('./main.js');
 var MongoClient = require('mongodb').MongoClient;
 var mongoose = require('mongoose');
 // DECLARE MONGODB AND MONGOOSE //
-var mongoDB = "mongodb://finance:finance_Nicole@finance-shard-00-00-jjlqo.mongodb.net:27017,finance-shard-00-01-jjlqo.mongodb.net:27017,finance-shard-00-02-jjlqo.mongodb.net:27017/test?ssl=true&replicaSet=finance-shard-0&authSource=admin";
+var mongoDB = "mongodb://Nicole73:Storm7337@travel-app-cluster-shard-00-00-7fwgj.mongodb.net:27017,travel-app-cluster-shard-00-01-7fwgj.mongodb.net:27017,travel-app-cluster-shard-00-02-7fwgj.mongodb.net:27017/test?ssl=true&replicaSet=Travel-App-Cluster-shard-0&authSource=admin";
 mongoose.connect(mongoDB);
 // SETUP MONGOOSE //
 // Get Mongoose to use the global promise library
@@ -17,55 +17,59 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 // DEFINE A SCHEMA //
 var Schema = mongoose.Schema;
 
-// Stores entries 
-var entriesSchema = new Schema({
-    email: String,
-    entryNum: Number,
-    month: String, // Make YYYY-MM-DD
-    day: String, // Make YYYY-MM-DD
-    year: String, // Make YYYY-MM-DD
-    ie: {type: String, enum: ["I", "E"]},
-    amount: Number,
-    mop: {type: String, enum: ["CC", "CH", "S", "C"]},
-    desc: String,
-    type: {type: String, enum: ["income", "savings", "food", "rent", "personal", "entertainment",
-        "school", "miscellaneous", "projects"]},
-    country: String,
-    company: String
-});
-// Store entries of credit card payments
-var creditSchema = new Schema({
-    email: String,
-    entryNum: Number,
-    month: String, // M
-    day: String, // D
-    year: String, // YYYY
-    amount: Number,
-    cc: {type: String, enum: ["DD"]},
-    mop: {type: String, enum: ["CH", "S"]},
-    monthStart: String, // M
-    dayStart: String, // D
-    yearStart: String, // YYYY
-    monthEnd: String, // M
-    dayEnd: String, // D
-    yearEnd: String, // YYYY
-
-});
-// Store list of users
+// Stores list of users
 var userSchema = new Schema({
     email: String,
-    entriesCount: Number,
-    creditCount: Number,
-    first_name: String,
-    last_name: String,
-    password: String
+    fName: String,
+    lName: String,
+    password: String, 
 });
+
+var tripsSchema = new Schema({
+    tripID: String, // Match tripID in daySchema and entrySchema
+    creatorEmail: String, // Match creatorEmail in daySchema and entrySchema
+    tripName: String, // Match tripName in daySchema and entrySchema
+    cities: Array, // [[city, country], ]
+    hasAccess: Array, // Who has access (their email)
+    numDays: Number,
+    numNights: Number,
+    startDate: String, // YYYY-MM-DD
+    endDate: String // YYYY-MM-DD
+});
+
+var daySchema = new Schema({
+    tripId: String, // Match tripId in tripsSchema and entrySchema
+    creatorEmail: String, // Match creatorEmail in tripsSchema and entrySchema
+    tripName: String, // Match tripName in tripsSchema and entrySchema
+    cities: Array, // Can be one or more [[city, country], ]
+    day: String, // YYYY-MM-DD
+    done: Boolean, // Default to false
+});
+
+entrySchema = new Schema({
+    tripId: String, // Match tripId in tripsSchema and daySchema
+    creatorEmail: String, // Match creatorEmail in tripsSchema and daySchema
+    tripName: String, // Match tripName in tripsSchema and daySchema
+    day: String, // YYYY-MM-DD
+    // From form
+    title: String,
+    startTime: String, // HH:MM:SS (24 hour format)
+    endTime: String, // HH:MM:SS (24 hour format)
+    cities: Array, // Can be one or more [[city, country], ]
+    type: {type: String, enum: ["Housing", "Transportation", "Food", "Attractions", "Other"]}, // Drop down
+    price: Number, // CAD
+    reserved: Boolean,
+    desc: String,
+    links: Array, // [[name, link], ]
+});
+
 
 // CREATE AND SAVE A MODEL //
 // Compile model from schema
-var entriesModel = mongoose.model('EntriesModel', entriesSchema);
-var creditModel = mongoose.model('CreditModel', creditSchema);
 var userModel = mongoose.model('UserModel', userSchema);
+var tripsModel = mongoose.model('TripsModel', tripsSchema);
+var dayModel = mongoose.model('DayModel', daySchema);
+var entryModel = mongoose.model('EntryModel', entrySchema);
 
 // Intialize User (Signup)
 exports.signup = function(fName, lName, email, pass, res){

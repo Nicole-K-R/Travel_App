@@ -55,7 +55,11 @@ main.app.get('/info', function(req, res){
 main.app.post('/post-login', function(req, res){
     var email = req.body.email;
     var pass = req.body.pass;
-    db.login(email, pass, res);
+    res.status(200).send({
+        "error": 0,
+        "Message": "Logged In successfully"
+    })
+    // db.login(email, pass, res);
 });
 // On User Signup
 main.app.post('/post-signup', function(req, res){

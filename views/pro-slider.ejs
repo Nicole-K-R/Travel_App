@@ -1,0 +1,484 @@
+<%- include templates/header.ejs %>
+    <div class="content-page">
+	
+		<!-- Start content -->
+        <div class="content">
+            
+			<div class="container-fluid">
+
+					
+				<div class="row">
+					<div class="col-xl-12">
+						<div class="breadcrumb-holder">
+							<h1 class="main-title float-left">Slider</h1>
+							<ol class="breadcrumb float-right">
+							<li class="breadcrumb-item">Home</li>
+							<li class="breadcrumb-item active">Slider</li>
+							</ol>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+				<!-- end row -->
+
+            
+				<div class="alert alert-danger" role="alert">
+					<h4 class="alert-heading">Important!</h4>
+					<p>This section is available in Pike Admin PRO version.</p>
+					<p><b>Save over 50 hours of development with our Pro Framework: Registration / Login / Users Management, CMS, Front-End Template (who will load contend added in admin area and saved in MySQL database), Contact Messages Management, manage Website Settings and many more, at an incredible price!</b></p>
+					<p>Read more about all PRO features here: <a target="_blank" href="https://www.pikeadmin.com/pike-admin-pro"><b>Pike Admin PRO features</b></a></p>
+				</div>
+
+			
+			
+					<div class="row">
+								
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">						
+									
+							<div class="card mb-3">
+							
+								<div class="card-header">
+								<span class="pull-right"><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal_add_slide"><i class="fa fa-plus" aria-hidden="true"></i> Add new slide image</button></span>
+								<div class="modal fade custom-modal" tabindex="-1" role="dialog" aria-labelledby="modal_add_slide" aria-hidden="true" id="modal_add_slide">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									
+									<form action="#" method="post" enctype="multipart/form-data">
+
+													
+									<div class="modal-header">
+									<h5 class="modal-title">Add new slider image</h5>
+									<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>          	
+									</div>
+										
+									<div class="modal-body">                
+														
+										<div class="row">
+											<div class="col-lg-12">
+											<div class="form-group">
+											<label>Title</label>
+											<input class="form-control" name="title" type="text" />
+											</div>
+											</div>
+										</div>
+										
+										<div class="row">
+											<div class="col-lg-12">
+											<div class="form-group">
+											<label>Description</label>
+											<textarea class="form-control" name="content" rows="4"></textarea>
+											</div>
+											</div>
+										</div>
+										
+										<div class="row">
+											<div class="col-lg-12">
+											<div class="form-group">
+											<label>URL</label>
+											<input class="form-control" name="url" type="text" />
+											</div>
+											</div>
+										</div>
+										
+										<div class="row">
+											<div class="col-lg-6">
+											<div class="form-group">
+											<label>Position</label>
+											<input class="form-control" name="position" type="text" />
+											</div>
+											</div>
+										
+											<div class="col-lg-6">
+											<div class="form-group">
+											<label>Active</label>
+											<select name="active" class="form-control">
+											<option value="1">YES</option>
+											<option value="0">NO</option>
+											</select>
+											</div>
+											</div>
+										
+										</div>
+										
+										<div class="form-group">
+										<label>Slide image (required):</label> <br />
+										<input type="file" name="image" required>
+										</div>
+										
+									</div>             
+									
+									<div class="modal-footer">
+										<button type="button" class="btn btn-primary">Add slider image</button>
+									</div>
+										
+									</form>	
+									
+								</div>
+							</div>
+						</div> 
+					<h3><i class="fa fa-image"></i> Slider (3 images)</h3>								
+					</div>
+					<!-- end card-header -->	
+							
+					<div class="card-body">
+							<div class="table-responsive">
+							<table class="table table-bordered">
+							<thead>
+							  <tr>
+								<td style="width:20px">#</td>
+								<td style="width:150px">Image</td>
+								<td>Slide details</td>
+								<td style="width:100px">Actions</td>
+							  </tr>
+							</thead>
+							<tbody>
+						
+								<tr >
+								<th>
+								1</th>
+								
+								<td>
+								<span style="float: left; margin-right:10px;"><img alt="image" class="img-fluid" style="max-width:150px; height:auto;" src="assets/images/8b75635e-final-nature.png" /></span>
+								</td>
+								
+								<td>
+								<h4>Slide 1 Title</h4>
+								<small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac lacus ullamcorper, consectetur mi quis, cursus nulla. Nunc placerat lacus sed pharetra hendrerit. Nulla risus quam, commodo cursus rhoncus a, consectetur sit amet eros.</small><br />
+								URl: <a target="_blank" href="https://www.pikeadmin.com/pro-frontend-template/blog/9-vivamus-condimentum-rutrum-odio">https://www.pikeadmin.com/pro-frontend-template/blog/9-vivamus-condimentum-rutrum-odio</a>
+								</td>
+								
+								<td>
+									<a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal_edit_slide_2"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+									<div class="modal fade custom-modal" tabindex="-1" role="dialog" aria-labelledby="modal_edit_slide_2" aria-hidden="true" id="modal_edit_slide_2">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											
+											<form action="#" method="post" enctype="multipart/form-data">
+
+															
+											<div class="modal-header">
+											<h5 class="modal-title">Add new slider image</h5>
+											<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>          	
+											</div>
+												
+											<div class="modal-body">                
+																
+												<div class="row">
+													<div class="col-lg-12">
+													<div class="form-group">
+													<label>Title</label>
+													<input class="form-control" name="title" type="text" value="Slide 1 Title" />
+													</div>
+													</div>
+												</div>
+												
+												<div class="row">
+													<div class="col-lg-12">
+													<div class="form-group">
+													<label>Description</label>
+													<textarea class="form-control" name="content" rows="4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac lacus ullamcorper, consectetur mi quis, cursus nulla. Nunc placerat lacus sed pharetra hendrerit. Nulla risus quam, commodo cursus rhoncus a, consectetur sit amet eros.</textarea>
+													</div>
+													</div>
+												</div>
+												
+												<div class="row">
+													<div class="col-lg-12">
+													<div class="form-group">
+													<label>URL</label>
+													<input class="form-control" name="url" type="text" value="https://www.pikeadmin.com/pro-frontend-template/blog/9-vivamus-condimentum-rutrum-odio" />
+													</div>
+													</div>
+												</div>
+												
+												<div class="row">
+													<div class="col-lg-6">
+													<div class="form-group">
+													<label>Position</label>
+													<input class="form-control" name="position" type="text" value="1" />
+													</div>
+													</div>
+												
+													<div class="col-lg-6">
+													<div class="form-group">
+													<label>Active</label>
+													<select name="active" class="form-control">
+													<option selected="selected" value="1">YES</option>
+													<option  value="0">NO</option>
+													</select>
+													</div>
+													</div>
+												
+												</div>
+												
+												<div class="form-group">
+												<label>Change slide image (optional):</label> <br />
+												<input type="file" name="image">
+												</div>
+												
+											</div>             
+											
+											<div class="modal-footer">
+												<button type="button" class="btn btn-primary">Edit slider image</button>
+											</div>
+												
+											</form>	
+											
+										</div>
+									</div>
+								</div> 
+									<a href="javascript:deleteRecord_2('2');" class="btn btn-danger btn-sm" data-placement="top" data-toggle="tooltip" data-title="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+									<script>
+									function deleteRecord_2(RecordId)
+									{
+										if (confirm('Confirm delete')) {
+											window.location.href = '#';
+										}
+									}
+									</script>
+								</td>
+							</tr>
+								<tr >
+								<th>
+								2</th>
+								
+								<td>
+								<span style="float: left; margin-right:10px;"><img alt="image" style="max-width:160px; height:auto;" src="assets/images/43774b37-blueprint-api-production.jpg" /></span>
+								</td>
+								
+								<td>
+								<h4>Slide 2 title</h4>
+								<small>Nulla lacinia volutpat massa, vitae mattis neque sodales vel. Nam venenatis arcu risus, sit amet scelerisque leo aliquet sit amet. Nunc convallis, nisl a sollicitudin volutpat, eros orci interdum ante.</small><br />
+								URl: <a target="_blank" href="https://www.pikeadmin.com/pro-frontend-template/news/3-maecenas-consequat-maximus-urna-id-dictum">https://www.pikeadmin.com/pro-frontend-template/news/3-maecenas-consequat-maximus-urna-id-dictum</a>
+								</td>
+								
+								<td>
+									<a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal_edit_slide_1"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+									<div class="modal fade custom-modal" tabindex="-1" role="dialog" aria-labelledby="modal_edit_slide_1" aria-hidden="true" id="modal_edit_slide_1">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											
+											<form action="#" method="post" enctype="multipart/form-data">
+
+															
+											<div class="modal-header">
+											<h5 class="modal-title">Add new slider image</h5>
+											<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>          	
+											</div>
+												
+											<div class="modal-body">                
+																
+												<div class="row">
+													<div class="col-lg-12">
+													<div class="form-group">
+													<label>Title</label>
+													<input class="form-control" name="title" type="text" value="Slide 2 title" />
+													</div>
+													</div>
+												</div>
+												
+												<div class="row">
+													<div class="col-lg-12">
+													<div class="form-group">
+													<label>Description</label>
+													<textarea class="form-control" name="content" rows="4">Nulla lacinia volutpat massa, vitae mattis neque sodales vel. Nam venenatis arcu risus, sit amet scelerisque leo aliquet sit amet. Nunc convallis, nisl a sollicitudin volutpat, eros orci interdum ante.</textarea>
+													</div>
+													</div>
+												</div>
+												
+												<div class="row">
+													<div class="col-lg-12">
+													<div class="form-group">
+													<label>URL</label>
+													<input class="form-control" name="url" type="text" value="https://www.pikeadmin.com/pro-frontend-template/news/3-maecenas-consequat-maximus-urna-id-dictum" />
+													</div>
+													</div>
+												</div>
+												
+												<div class="row">
+													<div class="col-lg-6">
+													<div class="form-group">
+													<label>Position</label>
+													<input class="form-control" name="position" type="text" value="2" />
+													</div>
+													</div>
+												
+													<div class="col-lg-6">
+													<div class="form-group">
+													<label>Active</label>
+													<select name="active" class="form-control">
+													<option selected="selected" value="1">YES</option>
+													<option  value="0">NO</option>
+													</select>
+													</div>
+													</div>
+												
+												</div>
+												
+												<div class="form-group">
+												<label>Change slide image (optional):</label> <br />
+												<input type="file" name="image">
+												</div>
+												
+											</div>             
+											
+											<div class="modal-footer">											
+												<button type="button" class="btn btn-primary">Edit slider image</button>
+											</div>
+												
+											</form>	
+											
+										</div>
+									</div>
+								</div> 
+																<a href="javascript:deleteRecord_1('1');" class="btn btn-danger btn-sm" data-placement="top" data-toggle="tooltip" data-title="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+									<script>
+									function deleteRecord_1(RecordId)
+									{
+										if (confirm('Confirm delete')) {
+											window.location.href = '#';
+										}
+									}
+									</script>
+								</td>
+							</tr>
+												<tr >
+								<th>
+								3							</th>
+								
+								<td>
+								<span style="float: left; margin-right:10px;"><img alt="image" style="max-width:160px; height:auto;" src="assets/images/31523e7b-dropbox-could-help-you-find-your-lost-stolen-smartphone.w1456.jpg" /></span>
+																	
+								</td>
+								
+								<td>
+								<h4>Slide 3 Title</h4>
+								<small>Duis vehicula, dolor pretium finibus interdum, sem mi suscipit enim, in tristique magna diam eget purus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</small><br />
+								URl: <a target="_blank" href="https://www.pikeadmin.com/pro-frontend-template/news/7-vestibulum-justo-et-feugiat-consectetur">https://www.pikeadmin.com/pro-frontend-template/news/7-vestibulum-justo-et-feugiat-consectetur</a>
+								</td>
+								
+								<td>
+									<a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal_edit_slide_3"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+									<div class="modal fade custom-modal" tabindex="-1" role="dialog" aria-labelledby="modal_edit_slide_3" aria-hidden="true" id="modal_edit_slide_3">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											
+											<form action="#" method="post" enctype="multipart/form-data">
+
+															
+											<div class="modal-header">
+											<h5 class="modal-title">Add new slider image</h5>
+											<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>          	
+											</div>
+												
+											<div class="modal-body">                
+																
+												<div class="row">
+													<div class="col-lg-12">
+													<div class="form-group">
+													<label>Title</label>
+													<input class="form-control" name="title" type="text" value="Slide 3 Title" />
+													</div>
+													</div>
+												</div>
+												
+												<div class="row">
+													<div class="col-lg-12">
+													<div class="form-group">
+													<label>Description</label>
+													<textarea class="form-control" name="content" rows="4">Duis vehicula, dolor pretium finibus interdum, sem mi suscipit enim, in tristique magna diam eget purus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</textarea>
+													</div>
+													</div>
+												</div>
+												
+												<div class="row">
+													<div class="col-lg-12">
+													<div class="form-group">
+													<label>URL</label>
+													<input class="form-control" name="url" type="text" value="https://www.pikeadmin.com/pro-frontend-template/news/6-quisque-ac-justo-porttitor-mi-egestas-fermentum" />
+													</div>
+													</div>
+												</div>
+												
+												<div class="row">
+													<div class="col-lg-6">
+													<div class="form-group">
+													<label>Position</label>
+													<input class="form-control" name="position" type="text" value="3" />
+													</div>
+													</div>
+												
+													<div class="col-lg-6">
+													<div class="form-group">
+													<label>Active</label>
+													<select name="active" class="form-control">
+													<option selected="selected" value="1">YES</option>
+													<option  value="0">NO</option>
+													</select>
+													</div>
+													</div>
+												
+												</div>
+												
+												<div class="form-group">
+												<label>Change slide image (optional):</label> <br />
+												<input type="file" name="image">
+												</div>
+												
+											</div>             
+											
+											<div class="modal-footer">
+												<button type="button" class="btn btn-primary">Edit slider image</button>
+											</div>
+												
+											</form>	
+											
+										</div>
+									</div>
+									</div> 
+									<a href="javascript:deleteRecord_3('3');" class="btn btn-danger btn-sm" data-placement="top" data-toggle="tooltip" data-title="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+									<script>
+									function deleteRecord_3(RecordId)
+									{
+										if (confirm('Confirm delete')) {
+											window.location.href = '#';
+										}
+									}
+									</script>
+								</td>
+							</tr>
+						</tbody>
+						</table>
+						</div>
+														
+									
+						</div>	
+						<!-- end card-body -->								
+							
+					</div>
+					<!-- end card -->					
+
+				</div>
+				<!-- end col -->	
+													
+			</div>
+			<!-- end row -->	
+
+
+
+            </div>
+			<!-- END container-fluid -->
+
+		</div>
+		<!-- END content -->
+
+    </div>
+	<!-- END content-page -->
+    
+<%- include templates/footer.ejs %>
+
+<!-- BEGIN Java Script for this page -->
+
+<!-- END Java Script for this page -->
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+<%- include templates/header.ejs %>
+    <div class="content-page">
+	
+		<!-- Start content -->
+        <div class="content">
+            
+			<div class="container-fluid">
+
+					
+					<div class="row">
+						<div class="col-xl-12">
+							<div class="breadcrumb-holder">
+								<h1 class="main-title float-left">Pages</h1>
+								<ol class="breadcrumb float-right">
+								<li class="breadcrumb-item">Home</li>
+								<li class="breadcrumb-item active">Pages</li>
+								</ol>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+					</div>
+					<!-- end row -->
+
+            
+						<div class="alert alert-danger" role="alert">
+						<h4 class="alert-heading">Important!</h4>
+						<p>This section is available in Pike Admin PRO version.</p>
+						<p><b>Save over 50 hours of development with our Pro Framework: Registration / Login / Users Management, CMS, Front-End Template (who will load contend added in admin area and saved in MySQL database), Contact Messages Management, manage Website Settings and many more, at an incredible price!</b></p>
+						<p>Read more about all PRO features here: <a target="_blank" href="https://www.pikeadmin.com/pike-admin-pro"><b>Pike Admin PRO features</b></a></p>
+						</div>
+
+			
+			
+					<div class="row">
+						
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">						
+								
+						<div class="card mb-3">
+						
+							<div class="card-header">
+							<span class="pull-right"><a href="pro-pages-add.ejs" class="btn btn-primary btn-sm"><i class="fa fa-plus" aria-hidden="true"></i> Add new page</a></span>
+							<h3><i class="fa fa-file-text-o"></i> All pages (3 pages)</h3>								
+							</div>
+							<!-- end card-header -->	
+										
+							<div class="card-body">
+												
+										
+									<table class="table table-bordered">
+									<thead>
+									  <tr>
+										<th>Page details</th>
+										<th style="width:100px">Actions</th>
+									  </tr>
+									</thead>
+									<tbody>
+									
+															<tr >							
+											<td>
+											<h5>Test page with redirect</h5>							<small>
+											Redirect URL: <a target="_blank" href=http://php.net/>http://php.net/</a><br />																												</small>
+											</td>
+											
+											
+											<td>
+												<a href="#" class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" data-title="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>								
+												<a href="javascript:deleteRecord_13('13');" class="btn btn-danger btn-sm" data-placement="top" data-toggle="tooltip" data-title="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+												<script>
+												function deleteRecord_13(RecordId)
+												{
+													if (confirm('Confirm delete')) {
+														window.location.href = '#';
+													}
+												}
+												</script>
+											</td>
+										</tr>
+															<tr >							
+											<td>
+											<h5>Terms of use</h5><p>Lorem ipsum dolor sit amet, probo omnis fugit vis in.&nbsp;Tale summo quaeque vim eu, pro sumo omnium at. Ad illud facilisi vix, nostrud dolores expetenda id vim. Et affert constituto percipitur qui. Ad purto choro has.Consul erroribus pri ut.&nbsp;Has no veniam consul molestie. Id eum zril graece, cu iusto alterum dignissim sit. Eos possit dictas no, eu accusamus necessitatibus sit. Per blandit voluptaria an, case illum error cu nec.Quaestio antiopam ut has, erant maluisset et vix. Error movet </p>							<small>
+																		Meta title: Lorem ipsum dolor sit amet<br />							Meta description: Suspendisse eros urna, malesuada quis est vel, mattis ornare magna<br />							Meta keywords: keyword1, keyword2							</small>
+											</td>
+											
+											
+											<td>
+												<a href="#" class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" data-title="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>								
+												<a href="javascript:deleteRecord_6('6');" class="btn btn-danger btn-sm" data-placement="top" data-toggle="tooltip" data-title="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+												<script>
+												function deleteRecord_6(RecordId)
+												{
+													if (confirm('Confirm delete')) {
+														window.location.href = '#';
+													}
+												}
+												</script>
+											</td>
+										</tr>
+															<tr >							
+											<td>
+											<h5>Privacy</h5><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed iaculis urna et sapien malesuada sagittis. Proin id elementum mi. Donec vitae augue hendrerit, laoreet enim gravida, varius magna. Sed placerat sollicitudin purus, quis scelerisque sapien cursus ut. Nunc dui ligula, ornare semper nisi eu, laoreet gravida lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse sodales fringilla iaculis. Ut vitae imperdiet elit. Ut feugiat, sapien a rutrum rhoncus, nibh mi place</p>							<small>
+																		Meta title: Privacy meta title<br />							Meta description: Privacy meta description<br />														</small>
+											</td>
+											
+											
+											<td>
+												<a href="#" class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" data-title="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>								
+												<a href="javascript:deleteRecord_4('4');" class="btn btn-danger btn-sm" data-placement="top" data-toggle="tooltip" data-title="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+												<script>
+												function deleteRecord_4(RecordId)
+												{
+													if (confirm('Confirm delete')) {
+														window.location.href = '#';
+													}
+												}
+												</script>
+											</td>
+										</tr>
+									</tbody>
+									</table>
+								  
+																	
+												
+									</div>	
+									<!-- end card-body -->								
+										
+								</div>
+								<!-- end card -->					
+
+							</div>
+							<!-- end col -->	
+																
+						</div>
+						<!-- end row -->	
+
+
+
+            </div>
+			<!-- END container-fluid -->
+
+		</div>
+		<!-- END content -->
+
+    </div>
+	<!-- END content-page -->
+    
+<%- include templates/footer.ejs %>
+
+<!-- BEGIN Java Script for this page -->
+
+<!-- END Java Script for this page -->
+
+</body>
+</html>

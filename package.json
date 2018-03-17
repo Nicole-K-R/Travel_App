@@ -1,0 +1,26 @@
+{
+  "name": "travel_app",
+  "version": "1.0.0",
+  "description": "Travel web app to record travel itineraries",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nicole-K-R/Travel_App.git"
+  },
+  "author": "Nicole Rosario",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nicole-K-R/Travel_App/issues"
+  },
+  "homepage": "https://github.com/Nicole-K-R/Travel_App#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "cookie-parser": "^1.4.3",
+    "mongodb": "^3.0.4",
+    "mongoose": "^5.0.9",
+    "sha256": "^0.2.0"
+  }
+}
